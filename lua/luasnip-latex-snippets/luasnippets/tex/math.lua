@@ -94,21 +94,23 @@ M = {
       { i(1), i(0) }),
     { condition = line_begin, show_condition = line_begin }),
 
-  -- autosnippet({ trig = "ali", name = "align(|*|ed)", dscr = "align math" },
-  --   fmta([[
-  --   \begin{align<>}
-  --   <>
-  --   .\end{align<>}
-  --   ]],
-  --     { c(1, { t("*"), t(""), t("ed") }), i(2), rep(1) }), -- in order of least-most used
-  --   { condition = line_begin, show_condition = line_begin }),
+  autosnippet({ trig = "align", name = "align(|*|ed)", dscr = "align math" },
+    fmta([[
+    \begin{align<>}
+    <>
+    .\end{align<>}
+    ]],
+      { c(1, { t("*"), t(""), t("ed") }), i(2), rep(1) }), -- in order of least-most used
+    { condition = line_begin, show_condition = line_begin }),
+
   autosnippet({ trig = "alig", name = "align", dscr = "align math" },
     fmta([[
     \begin{align}
     <>
     \end{align}
+    <>
     ]],
-      { i(1), t(""), rep(1) }),
+      { i(1), i(0) }),
     { condition = line_begin, show_condition = line_begin }),
 
   autosnippet({ trig = "ali*", name = "align*", dscr = "align math" },
@@ -116,8 +118,9 @@ M = {
     \begin{align*}
     <>
     \end{align*}
+    <>
     ]],
-      { i(1), t(""), rep(1) }),
+      { i(1), i(0) }),
     { condition = line_begin, show_condition = line_begin }),
 
   autosnippet({ trig = "alid", name = "aligned", dscr = "align math" },
@@ -125,8 +128,9 @@ M = {
     \begin{aligned}
     <>
     \end{aligned}
+    <>
     ]],
-      { i(1), t(""), rep(1) }),
+      { i(1), i(0) }),
     { condition = line_begin, show_condition = line_begin }),
 
   autosnippet({ trig = '==', name = '&= align', dscr = '&= align' },
