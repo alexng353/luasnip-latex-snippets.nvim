@@ -136,7 +136,7 @@ local single_command_specs = {
 		},
 		command = [[\textbf]],
 	},
-	it = {
+	italic = {
 		context = {
 			name = "textit",
 			dscr = "italic text",
