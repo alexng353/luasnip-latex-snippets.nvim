@@ -99,8 +99,27 @@ M = {
     ),
     { condition = tex.in_text, show_condition = tex.in_text }),
 
+  s({ trig = "-r", name = "enumerate (roman)", dscr = "numbered list (enumerate)" },
+    fmta([[
+    \begin{enumerate}[label=(\roman*)]
+    \item <>
+    \end{enumerate}
+    ]],
+      {
+        c(1, { i(0), sn(nil, fmta(
+          [[
+        [<>] <>
+        ]],
+          { i(1), i(0) })) })
+      }
+    ),
+    { condition = tex.in_text, show_condition = tex.in_text }),
+
   -- generate new bullet points
   autosnippet({ trig = "--", hidden = true }, { t("\\item") },
+    { condition = in_bullets_cond * line_begin, show_condition = in_bullets_cond * line_begin }
+  ),
+  autosnippet({ trig = "-=", hidden = true }, { t("\\subitem") },
     { condition = in_bullets_cond * line_begin, show_condition = in_bullets_cond * line_begin }
   ),
   autosnippet({ trig = "!-", name = "bullet point", dscr = "bullet point with custom text" },

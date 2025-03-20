@@ -34,7 +34,7 @@ local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" }
 --]
 local tex = require("luasnip-latex-snippets.luasnippets.tex.utils.conditions")
 local single_command_snippet = require("luasnip-latex-snippets.luasnippets.tex.utils.scaffolding")
-.single_command_snippet
+    .single_command_snippet
 local reference_snippet_table = {
   a = "auto",
   c = "c",
@@ -51,8 +51,14 @@ M = {
       { i(1), i(2), i(0) })),
 
   autosnippet(
-    { trig = '([acCer])ref', name = '(acC|eq)?ref', dscr = 'add a reference (with autoref, cref, eqref)', trigEngine =
-    "pattern", hidden = true },
+    {
+      trig = '([acCer])ref',
+      name = '(acC|eq)?ref',
+      dscr = 'add a reference (with autoref, cref, eqref)',
+      trigEngine =
+      "pattern",
+      hidden = true
+    },
     fmta([[
     \<>ref{<>:<>}<>
     ]],
@@ -117,13 +123,13 @@ local single_command_specs = {
   -- 	ext = { label = true, short = "sssec" },
   -- },
 
-  sq = { -- requires csquotes!
-    context = {
-      name = "enquote*",
-      dscr = "single quotes",
-    },
-    command = [[\enquote*]],
-  },
+  -- sq = { -- requires csquotes!
+  --   context = {
+  --     name = "enquote*",
+  --     dscr = "single quotes",
+  --   },
+  --   command = [[\enquote*]],
+  -- },
   qq = {
     context = {
       name = "enquote",
@@ -156,14 +162,14 @@ local single_command_specs = {
     command = [[\texttt]],
   },
 
-  sc = {
-    context = {
-      name = "textsc",
-      dscr = "small caps",
-      hidden = true,
-    },
-    command = [[\textsc]],
-  },
+  -- sc = {
+  --   context = {
+  --     name = "textsc",
+  --     dscr = "small caps",
+  --     hidden = true,
+  --   },
+  --   command = [[\textsc]],
+  -- },
   underline = {
     context = {
       name = "underline (text)",
