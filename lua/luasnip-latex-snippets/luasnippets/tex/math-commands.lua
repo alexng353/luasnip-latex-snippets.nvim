@@ -108,13 +108,19 @@ M = {
     { d(1, generate_fraction) },
     { condition = tex.in_math, show_condition = tex.in_math }),
 
-  autosnippet({ trig = "lim", name = "lim(sup|inf)", dscr = "lim(sup|inf)" },
+  -- autosnippet({ trig = "lim", name = "lim(sup|inf)", dscr = "lim(sup|inf)" },
+  --   fmta([[
+  --   \lim<><><>
+  --   ]],
+  --     { c(1, { t(""), t("sup"), t("inf") }),
+  --       c(2, { t(""), fmta([[_{<> \to <>}]], { i(1, "n"), i(2, "\\infty") }) }),
+  --       i(0) }),
+  --   { condition = tex.in_math, show_condition = tex.in_math }),
+  autosnippet({ trig = "lim", name = "lim", dscr = "lim" },
     fmta([[
-    \lim<><><>
+    \lim<> <>
     ]],
-      { c(1, { t(""), t("sup"), t("inf") }),
-        c(2, { t(""), fmta([[_{<> \to <>}]], { i(1, "n"), i(2, "\\infty") }) }),
-        i(0) }),
+      { c(1, { fmta([[_{<>\to<>}]], { i(1, "n"), i(2, "\\infty") }), t("") }), i(0) }),
     { condition = tex.in_math, show_condition = tex.in_math }),
 
   autosnippet({ trig = "int", name = "integral", dscr = "integral" },
